@@ -13,18 +13,12 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['ayuda']">FAQ</a>
       </li>
-      <button type="button" (click)="habla()">Hablar</button>
-      <button type="button" (click)="silencio()">Detener</button>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
+      <li class="bocina">
+        <button type="button" (click)="habla()"><i class="fas fa-volume-up"></i></button>
+      </li>
+      <li class="bocina">
+        <button type="button" (click)="silencio()"><i class="fas fa-volume-mute"></i></button>
+      </li>
       <!--Termina-->
     </ul>
   </div>
