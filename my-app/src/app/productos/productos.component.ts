@@ -1,4 +1,7 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { Producto } from '../class/producto';
+import { ProductoService } from '../service/producto.service';
 
 @Component({
   selector: 'app-productos',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private servicioProducto: ProductoService) { }
 
   ngOnInit(): void {
+    this.getproductos();
   }
-
+  getproductos(){
+    console.log("Accediendo");
+    this.servicioProducto.getProductos().subscribe(res =>{
+      this.servicioProducto.productos= res as Producto[];
+      console.log("PRODUCTOS");
+    });
+  }
 }
