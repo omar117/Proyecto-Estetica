@@ -11,15 +11,21 @@
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" [routerLink]="['productos']">Productos</a>
         </li>
+     
         <ul class="navbar-nav mr-auto" *ngIf="user$ | async as user; else login">
+
+          <li class="nav-item" routerLinkActive="active"  *ngIf='user.email == "admin@gmail.com"'>
+            <a class="nav-link" [routerLink]="['admin']">Administrador</a>
+          </li>
+
           <li class="nav-item" routerLinkActive="active"  *ngIf="user">
-            <a class="nav-link" href="#" (click)="onLogout()">Salir</a>
+            <a class="nav-link" href="" (click)="onLogout()">Salir</a>
           </li>
   
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link">{{user?.email}}</a>
           </li>
-        
+          
         </ul>
 
         <ng-template #login>
@@ -32,9 +38,6 @@
             </li>
         </ul>
         </ng-template>
-       
-      
-        <!--Termina-->
       </ul>
       
     </div>

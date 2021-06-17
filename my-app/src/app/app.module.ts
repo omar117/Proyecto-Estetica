@@ -15,6 +15,8 @@ import { ReactiveFormsModule} from '@angular/forms';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireModule} from '@angular/fire';
 import { environment } from './../environments/environment';
+import { AgendaComponent } from './agenda/agenda.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { environment } from './../environments/environment';
     NavbarComponent,
     ServiciosComponent,
     ProductosComponent,
+    AgendaComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
