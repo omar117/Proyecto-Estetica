@@ -9,9 +9,7 @@ import { LectorService } from '../lector.service';
 export class HomeComponent implements OnInit {
   
 
-  constructor(private _servicio:LectorService) {
-
-   }
+  constructor(private _servicio:LectorService) { }
 
   ngOnInit(): void {
     var text1;
