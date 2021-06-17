@@ -20,6 +20,7 @@ export class ProductosComponent implements OnInit {
     console.log("Accediendo");
     /*this.servicioProducto.getProductos().subscribe(res =>{
       this.servicioProducto.productos= res as Producto[];
+      this.productos=res as Producto[];
       console.log("PRODUCTOS");
     });*/
     this.productos=this.servicioProducto.getProductos2();
