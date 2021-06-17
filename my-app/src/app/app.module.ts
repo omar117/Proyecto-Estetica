@@ -7,11 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ServicioService } from './servicio.service';
 import { FormsModule } from '@angular/forms';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
-import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { ReactiveFormsModule} from '@angular/forms';
+
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireModule} from '@angular/fire';
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,15 +23,17 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     NavbarComponent,
     ServiciosComponent,
     ProductosComponent,
-    InicioSesionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
-  providers: [ServicioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

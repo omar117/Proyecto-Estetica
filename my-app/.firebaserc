@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "proyectoestetica-226d1": {
+      "hosting": {
+        "my-app": [
+          "proyectoestetica-226d1"
+        ]
+      }
+    }
+  }
+}
