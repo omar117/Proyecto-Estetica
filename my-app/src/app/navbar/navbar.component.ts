@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LectorService } from '../lector.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _servicio:LectorService) { }
 
   ngOnInit(): void {
   }
 
+  public habla():void{
+    this._servicio.speak();
+  }
+  public silencio():void{
+    this._servicio.stop();
+  }
 }
