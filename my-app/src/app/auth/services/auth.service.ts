@@ -1,6 +1,7 @@
 import { AngularFireAuth } from '@angular/fire/auth';
 import {first} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import firebase from 'firebase/app';
 
 
 @Injectable()
@@ -8,6 +9,10 @@ export class AuthService {
   
   constructor(public afAuth: AngularFireAuth) { }
 
+
+  async loginPhone(){
+    //const result = await this.afAuth.signInWithPhoneNumber("",);
+  }
 
   async login(email:string,password:string){
     try{
@@ -21,17 +26,6 @@ export class AuthService {
    
   }
 
-  async loginPhone(email:string,password:string){
-    try{
-      //const result = await this.afAuth.signInWithPhoneNumber("","");
-      //return result;
-    }
-    catch(error){
-      console.log(error);
-    }
-    return null;
-   
-  }
 
   async register(email:string,password:string){
     try{
