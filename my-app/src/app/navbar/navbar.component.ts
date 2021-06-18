@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LectorService } from '../lector.service';
 
 @Component({
   selector: 'app-navbar',
