@@ -11,6 +11,8 @@ import { ServicioService } from './servicio.service';
 import { FormsModule } from '@angular/forms';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
+import { ListProductosComponent } from './list-productos/list-productos.component';
+import { FormProductosComponent } from './form-productos/form-productos.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ProductosComponent } from './productos/productos.component';
     NavbarComponent,
     ServiciosComponent,
     ProductosComponent,
+    ListProductosComponent,
+    FormProductosComponent,
   ],
   imports: [
     BrowserModule,
