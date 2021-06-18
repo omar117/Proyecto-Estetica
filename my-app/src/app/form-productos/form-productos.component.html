@@ -1,1 +1,64 @@
-<p>form-productos works!</p>
+
+<div class="container">
+    <h3>
+        {{editmode == false ? 'Ingresar Producto':'Editar Producto'}}
+    </h3>
+    <div class="form-group ">
+        <label for="">Nombre:</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedproduct._nombre">
+    </div>
+    <div class="form-group">
+        <label for="">Descripcion:</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedproduct._descripcion" >
+    </div>
+    <div class="form-group">
+        <label for="">Costo:</label>
+        <input type="number" class="form-control" [(ngModel)]="selectedproduct._costo">
+    </div>
+    <div class="form-group">
+        <label for="">img:</label>
+        <input  type="file" class="form-control" [(ngModel)]="selectedproduct._img">
+    </div>
+    <div class="form-group mt-3">
+        <button class="btn btn-primary" type="button" (click)="fnSave()">
+            {{editmode == false ? 'Guardar':'Editar'}}
+        </button>
+    </div>
+</div>
+<br>
+<hr>
+<div>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Acciones</th>
+              </tr>
+        </thead>
+        <tbody *ngFor="let x of productos, let i=index">
+            <tr>
+                <th scope="row">{{x._id}}</th>
+                <td>{{x._nombre}}</td>
+                <td>{{x._descripcion}}</td>
+                <td>{{x._costo}}</td>
+                <td><a
+                    href="javascript:void(0)"
+                    class="icon-button"
+                    >
+                    <i class="fas fa-pencil-alt"></i>
+                  </a>
+                  <a
+                    href="javascript:void(0)"
+                    class="icon-button" 
+                      
+                    >
+                    <i class="fas fa-trash-alt"></i>
+                  </a></td>
+              </tr>
+        </tbody>
+      </table>
+    
+</div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient}  from '@angular/common/http'
 import { Producto } from '../class/producto';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,13 @@ export class ProductoService {
   readonly URL_API='/api';
   productoSeleccion: Producto | undefined;
   productos: Producto[] | undefined;
+  /*
+  private $productos:BehaviorSubject<Producto[]> = new BehaviorSubject<Producto[]>([]);//Igual a arreglo vacio
+  _persons:Observable<Producto[]> = this.$productos.asObservable();//_persons sera un observable del array
+
+  private $producto:BehaviorSubject<Producto> = new BehaviorSubject<Producto>(null);//igual a nulo
+  _person:Observable<Producto> = this.$producto.asObservable();//_person sera un observable de un solo objeto
+*/
   constructor(private http:HttpClient) { }
 
   getProductos(){
