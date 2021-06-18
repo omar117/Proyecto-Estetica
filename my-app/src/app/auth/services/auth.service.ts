@@ -3,16 +3,28 @@ import {first} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
 
-
 @Injectable()
 export class AuthService {
   
   constructor(public afAuth: AngularFireAuth) { }
 
+
   async login(email:string,password:string){
     try{
       const result = await this.afAuth.signInWithEmailAndPassword(email,password);
       return result;
+    }
+    catch(error){
+      console.log(error);
+    }
+    return null;
+   
+  }
+
+  async loginPhone(email:string,password:string){
+    try{
+      //const result = await this.afAuth.signInWithPhoneNumber("","");
+      //return result;
     }
     catch(error){
       console.log(error);

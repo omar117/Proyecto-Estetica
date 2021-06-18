@@ -15,7 +15,8 @@ const routes: Routes = [
   {path: 'agenda',component: AgendaComponent},
   {path: 'admin',component: AdminComponent},
   { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
-  { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },   
+  { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
+  { path: 'loginPhone', loadChildren: () => import('./auth/login-phone/login-phone.module').then(m => m.LoginPhoneModule) },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 
 ];
