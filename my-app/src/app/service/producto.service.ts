@@ -32,7 +32,7 @@ export class ProductoService {
   _costo: 12
     }
 ];
-  readonly URL_API='';
+  readonly URL_API='/api';
   productoSeleccion: Producto | undefined;
   productos: Producto[] | undefined;
   constructor(private http:HttpClient) { }
