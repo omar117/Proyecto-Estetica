@@ -1,16 +1,13 @@
-<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { LectorService } from '../lector.service';
-=======
-import { Component, OnInit} from '@angular/core';
->>>>>>> omar
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
 
-<<<<<<< HEAD
   constructor(private _servicio: LectorService) { }
 
   ngOnInit(): void {
@@ -23,10 +20,5 @@ import { Component, OnInit} from '@angular/core';
   public enviar(cadena: any): void {
     this._servicio.setCadena(cadena);
   }
-=======
-})
-export class HomeComponent{
-
->>>>>>> omar
 
 }
