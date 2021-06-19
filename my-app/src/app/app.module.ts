@@ -13,6 +13,8 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AyudaComponent } from './ayuda/ayuda.component';
+import{ LectorService } from './lector.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ServiciosComponent,
     ProductosComponent,
     ContactoComponent,
+    AyudaComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     FontAwesomeModule
   ],
-  providers: [ServicioService],
+  providers: [ServicioService,LectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
