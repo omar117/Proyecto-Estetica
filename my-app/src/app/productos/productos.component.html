@@ -1,1 +1,25 @@
-<p>productos works!</p>
+<h1>Conoce nuestros productos</h1>
+<br>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4" >
+    <div class="col" *ngFor="let x of productos, let i=index">
+      <div class="card">
+        <img src="{{x._img}}" class="card-img-top" alt="Imagen de producto">
+        <div class="card-body">
+          <h5 class="card-title">{{x._nombre}}</h5>
+          <p class="card-text">{{x._descripcion}}</p>
+          
+        </div>
+        <div class="card-footer color1">${{x._costo}}</div>
+      </div>
+    </div>
+    </div>
+
+ 
+
+    
+  
+    
+
+  

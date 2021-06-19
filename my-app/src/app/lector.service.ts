@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LectorService {
+
   public text: string;
   public cadena: string;
 
   constructor() {
     this.text = '';
     this.cadena = '';
-    console.log('Funciona');
+    console.log("Funciona");
   }
 
   public setCadena(text: string): void {
@@ -29,6 +30,7 @@ export class LectorService {
     }
   }
   private synthesizeSpeechFromText(text: string): void {
+
     var utterance = new SpeechSynthesisUtterance(text);
     speechSynthesis.speak(utterance);
   }
