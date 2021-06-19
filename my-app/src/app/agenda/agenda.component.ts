@@ -192,5 +192,9 @@ export class AgendaComponent implements OnInit {
       console.log(error);
     }
   }
+
+  verCitas(){
+    this.router.navigate(['/citas']);
+  }
   
 }

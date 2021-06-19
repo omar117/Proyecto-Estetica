@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +17,9 @@ import { environment } from './../environments/environment';
 import { AgendaComponent } from './agenda/agenda.component';
 import { AdminComponent } from './admin/admin.component';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { CitasComponent } from './citas/citas.component';
+import { LetrasPipe } from './letras.pipe';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
     ProductosComponent,
     AgendaComponent,
     AdminComponent,
+    CitasComponent,
+    LetrasPipe,
   ],
   imports: [
     BrowserModule,

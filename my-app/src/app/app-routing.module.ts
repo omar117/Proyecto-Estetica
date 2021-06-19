@@ -6,6 +6,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { AdminComponent } from './admin/admin.component';
+import { CitasComponent } from './citas/citas.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'productos',component: ProductosComponent},
   {path: 'servicios',component: ServiciosComponent},
   {path: 'agenda/:id',component: AgendaComponent},
+  {path: 'citas',component: CitasComponent},
   {path: 'admin',component: AdminComponent},
   { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
   { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },

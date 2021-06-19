@@ -18,7 +18,18 @@ const modelDatos = {
         console.log(err);
         return err;
       });
+  },
+  getRecuperarDatosFireBase: async (uid,token) => {
+    return await axios
+      .get("https://proyectoestetica-226d1-default-rtdb.firebaseio.com/tareas/"+uid+".json?auth="+token)
+      .then((data) => data)
+      .catch((err) => {
+        console.log(err);
+        return err;
+      });
   }
 };
+
+
 
 module.exports = modelDatos;

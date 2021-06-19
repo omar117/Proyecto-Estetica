@@ -4,5 +4,7 @@ const ctrlDatos = require('../controlador');
 
 router.get('/api', ctrlDatos.findDatos);
 router.get('/guardar/:uid/:token/:datos', ctrlDatos.GuardarDatosFireBase);
+router.get('/recuperar/:uid/:token', ctrlDatos.RecuperarDatosFireBase);
+
 
 module.exports = router;
