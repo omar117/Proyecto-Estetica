@@ -29,9 +29,8 @@ export class LectorService {
       speechSynthesis.cancel();
     }
   }
-  private synthesizeSpeechFromText(
-    text: string
-  ): void {
+  private synthesizeSpeechFromText(text: string): void {
+
     var utterance = new SpeechSynthesisUtterance(text);
     speechSynthesis.speak(utterance);
   }
