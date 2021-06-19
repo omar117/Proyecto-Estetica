@@ -9,14 +9,10 @@ export class AuthService {
   
   constructor(public afAuth: AngularFireAuth) { }
 
-
-  async loginPhone(){
-    //const result = await this.afAuth.signInWithPhoneNumber("",);
-  }
-
   async login(email:string,password:string){
     try{
       const result = await this.afAuth.signInWithEmailAndPassword(email,password);
+      console.log(result);
       return result;
     }
     catch(error){

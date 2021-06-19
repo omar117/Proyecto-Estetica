@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
 import { CitaModel } from 'src/app/models/cita.model';
 import { AgendaService } from '../auth/services/agenda.service';
 import { Subscription } from 'rxjs';
-
+import {first} from 'rxjs/operators';
 import { ControlContainer } from '@angular/forms';
+import { ServiceService } from '../auth/services/service.service';
 
 @Component({
   selector: 'app-agenda',
@@ -50,7 +51,7 @@ export class AgendaComponent implements OnInit {
   servicio:any;
   
   _citas:Observable<CitaModel[]>;
-  constructor(private authSvc: AuthService,private router:Router,private agendaService:AgendaService, private activatedRoute:ActivatedRoute) { 
+  constructor(private authSvc: AuthService,private router:Router,private agendaService:AgendaService, private activatedRoute:ActivatedRoute,private Servicio: ServiceService) { 
     this._citas = this.agendaService._citas;
   }
 
@@ -154,7 +155,6 @@ export class AgendaComponent implements OnInit {
   }
 
   fnSave(servicio:string,fecha:string):void{
-   
     let cita:CitaModel = {
       _name: servicio,
       _fecha: fecha
@@ -164,5 +164,33 @@ export class AgendaComponent implements OnInit {
     this.fnCleanForm();
   }
 
+  //Guardar en Firebase
+  uid:any;
+  token:any;
 
+  async guardar(){
+    try{
+      const user = await this.authSvc.getCurrentUser();
+      let data = localStorage.getItem('data');
+      if(user){
+        this.uid = user.uid;
+        await this.authSvc.afAuth.idToken.pipe(first()).toPromise().then((payload) => {
+          if (payload) {
+            this.token = payload
+          }
+        }).catch((e) => console.log(`Error ${e}`))
+
+        const urapi = `http://localhost:3080/guardar/`+this.uid+'/'+this.token+'/'+data;
+        this.Servicio.getJSON(urapi).subscribe((res: any) => {
+          this.router.navigate(['/home']);
+      });
+      }
+      else{
+        this.router.navigate(['/login']);
+      }
+    }catch(error){
+      console.log(error);
+    }
+  }
+  
 }
