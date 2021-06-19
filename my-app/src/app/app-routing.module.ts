@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'home',component: HomeComponent},
   {path: 'productos',component: ProductosComponent},
   {path: 'servicios',component: ServiciosComponent},
-  {path: 'agenda',component: AgendaComponent},
+  {path: 'agenda/:id',component: AgendaComponent},
   {path: 'admin',component: AdminComponent},
   { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
   { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
