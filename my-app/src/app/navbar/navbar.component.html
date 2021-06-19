@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-dark ">
   <div class="container-fluid">
     <!--<a class="nav-link" [routerLink]="['home']">Inicio</a>-->
@@ -8,6 +9,9 @@
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+=======
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+>>>>>>> omar
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -34,6 +38,46 @@
             class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
             [routerLink]="['ayuda']">FAQ</button>
         </li>
+<<<<<<< HEAD
+=======
+ 
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['servicios']">Servicios</a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['productos']">Productos</a>
+        </li>
+
+        <ul class="navbar-nav mr-auto" *ngIf="user$ | async as user; else login">
+
+          
+          <li class="nav-item" routerLinkActive="active"  *ngIf='user.email == "admin@gmail.com"'>
+            <a class="nav-link" [routerLink]="['admin']">Administrador</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active"  *ngIf="user">
+            <a class="nav-link" href="" (click)="onLogout()">Salir</a>
+          </li>
+  
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link">{{user?.email}} {{user?.phoneNumber}}</a>
+            <!--<a class="nav-link">{{user?._lat}}</a> Token-->
+          </li>
+          
+        </ul>
+
+        <ng-template #login>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="/login">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="/register">Registrarse</a>
+            </li>
+        </ul>
+        </ng-template>
+>>>>>>> omar
       </ul>
       <form class="d-flex ">
         <button type="button" (click)="habla()" class="btn btn-primary"><i class="fas fa-volume-up"></i></button>

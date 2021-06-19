@@ -1,0 +1,31 @@
+
+<!--
+<div *ngFor="let item of datos | keyvalue">
+  {{getVal(item.key)}}
+
+  Key: <b>{{item.key}}</b> and Value: <b>{{item.value}}</b>
+  {{subClave}}
+  <div *ngFor='let subitem of datos[subClave]'>
+    <p>{{subitem | json}}</p>
+  </div>
+</div>-->
+
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>Servicio</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of datos | keyvalue;">
+      {{getVal(item.key)}}
+        <tr  *ngFor='let subitem of datos[subClave]; let i = index'>
+          <th scope="row">{{i+1}}</th>
+          <td>{{subitem._name}}</td>
+          <td>{{subitem._fecha}}</td>
+        </tr>
+    </tbody>
+</table>
+  
