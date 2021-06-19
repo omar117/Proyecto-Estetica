@@ -17,6 +17,7 @@ import {AngularFireModule} from '@angular/fire';
 import { environment } from './../environments/environment';
 import { AgendaComponent } from './agenda/agenda.component';
 import { AdminComponent } from './admin/admin.component';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgxQRCodeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

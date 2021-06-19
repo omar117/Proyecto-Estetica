@@ -15,6 +15,7 @@
 
         <ul class="navbar-nav mr-auto" *ngIf="user$ | async as user; else login">
 
+          
           <li class="nav-item" routerLinkActive="active"  *ngIf='user.email == "admin@gmail.com"'>
             <a class="nav-link" [routerLink]="['admin']">Administrador</a>
           </li>
