@@ -10,6 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
+
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { FooterComponent } from './footer/footer.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AyudaComponent } from './ayuda/ayuda.component';
@@ -18,6 +22,7 @@ import { AyudaComponent } from './ayuda/ayuda.component';
 
 import{ LectorService } from './lector.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +30,7 @@ import{ LectorService } from './lector.service';
     NavbarComponent,
     ServiciosComponent,
     ProductosComponent,
+    FooterComponent,
     ContactoComponent,
     AyudaComponent,
   ],
@@ -33,10 +39,17 @@ import{ LectorService } from './lector.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
     FontAwesomeModule
   ],
   providers: [
     LectorService
+
   ],
   bootstrap: [AppComponent]
 })
