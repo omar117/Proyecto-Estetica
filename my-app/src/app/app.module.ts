@@ -13,6 +13,7 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ListProductosComponent } from './list-productos/list-productos.component';
 import { FormProductosComponent } from './form-productos/form-productos.component';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormProductosComponent } from './form-productos/form-productos.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxChartsModule
   ],
   providers: [ServicioService],
   bootstrap: [AppComponent]

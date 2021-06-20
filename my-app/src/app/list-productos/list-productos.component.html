@@ -1,0 +1,32 @@
+
+<div class="container">
+    <h1>Estadisticas servicios</h1>
+    <br>
+    <div>
+    <ngx-charts-bar-vertical 
+    [view]="[1000,400]"
+    [scheme]="colorScheme"
+    [results]="saleData"
+    [xAxisLabel]="'Dia'"
+    [legendTitle]="'Clientes al dia'"
+    [yAxisLabel]="'Clientes'"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [gradient]="false">
+</ngx-charts-bar-vertical>
+<br>
+</div>
+<p>Esta seccion no fue terminada y es solo una grafica estatica representando como seria.</p>
+<!--
+<ngx-charts-pie-chart 
+    [scheme]="colorScheme"
+    [results]="saleData"
+    [legend]="true"
+    [legendTitle]="'Clientes al dia'" 
+  
+    [labels]="true" >
+</ngx-charts-pie-chart>-->
+</div>
