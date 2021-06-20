@@ -165,9 +165,10 @@ export class AgendaComponent implements OnInit {
   //Guardar en Firebase
   uid:any;
   token:any;
-
+  animacion:boolean = false;
   async guardar(){
     try{
+      this.animacion = true;
       const user = await this.authSvc.getCurrentUser();
       let data = localStorage.getItem('data');
       if(user){
@@ -180,7 +181,10 @@ export class AgendaComponent implements OnInit {
 
         const urapi = `http://localhost:3080/guardar/`+this.uid+'/'+this.token+'/'+data;
         this.Servicio.getJSON(urapi).subscribe((res: any) => {
-          this.router.navigate(['/home']);
+          setTimeout(() => {
+            this.router.navigate(['/home']);
+          }, 5000);
+          
       });
       }
       else{
