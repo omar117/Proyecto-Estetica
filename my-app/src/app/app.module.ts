@@ -13,7 +13,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireModule} from '@angular/fire';
-import { environment } from './../environments/environment';
+import { environment } from 'src/environments/environment';
 import { AgendaComponent } from './agenda/agenda.component';
 import { AdminComponent } from './admin/admin.component';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
@@ -22,14 +22,12 @@ import { LetrasPipe } from './letras.pipe';
 
 
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { FooterComponent } from './footer/footer.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AyudaComponent } from './ayuda/ayuda.component';
 
 //servicio de lector
-
 import{ LectorService } from './lector.service';
 
 
@@ -40,43 +38,34 @@ import{ LectorService } from './lector.service';
     NavbarComponent,
     ServiciosComponent,
     ProductosComponent,
-<<<<<<< HEAD
     FooterComponent,
     ContactoComponent,
     AyudaComponent,
-=======
     AgendaComponent,
     AdminComponent,
     CitasComponent,
     LetrasPipe,
->>>>>>> omar
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-<<<<<<< HEAD
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    FontAwesomeModule
-  ],
-  providers: [
-    LectorService
-
-  ],
-=======
+    FontAwesomeModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     NgxQRCodeModule,
   ],
-  providers: [],
->>>>>>> omar
+  providers: [
+    LectorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,17 +19,14 @@
     "@angular/platform-browser": "~12.0.2",
     "@angular/platform-browser-dynamic": "~12.0.2",
     "@angular/router": "~12.0.2",
-<<<<<<< HEAD
     "@angular/service-worker": "~12.0.2",
     "@fortawesome/angular-fontawesome": "^0.9.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-=======
     "@popperjs/core": "^2.9.2",
     "@techiediaries/ngx-qrcode": "^9.1.0",
->>>>>>> omar
     "bootstrap": "^5.0.1",
     "firebase": "^8.6.8",
     "jquery": "^3.6.0",

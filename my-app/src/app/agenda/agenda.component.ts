@@ -6,9 +6,7 @@ import * as moment from 'moment';
 import { Observable } from 'rxjs';
 import { CitaModel } from 'src/app/models/cita.model';
 import { AgendaService } from '../auth/services/agenda.service';
-import { Subscription } from 'rxjs';
 import {first} from 'rxjs/operators';
-import { ControlContainer } from '@angular/forms';
 import { ServiceService } from '../auth/services/service.service';
 
 @Component({
