@@ -1,21 +1,83 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark ">
+  <div class="container-fluid">
+    <!--<a class="nav-link" [routerLink]="['home']">Inicio</a>-->
+    <button class="nav-link button button--wayra button--text-upper button--size-s button--text-thick button--inverted"
+      [routerLink]="['home']">Inicio</button>
+    <button class="navbar-toggler" style="background: #000;" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['home']">Inicio</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['servicios']">Servicios</a>
-          </li>
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="['productos']">Productos</a>
-          </li>
-       
 
-        <!--Termina-->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <!--<a class="nav-link" [routerLink]="['servicios']">Servicios</a>-->
+          <button
+            class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
+            [routerLink]="['servicios']">Servicios</button>
+        </li>
+        <li class="nav-item">
+          <!--<a class="nav-link" [routerLink]="['contacto']">Contacto</a>-->
+          <button
+            class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
+            [routerLink]="['contacto']">Contacto</button>
+        </li>
+        <li class="nav-item">
+          <!--<a class="nav-link" [routerLink]="['productos']">Productos</a>-->
+          <button
+            class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
+            [routerLink]="['productos']">Productos</button>
+        </li>
       </ul>
-      
+
+        <ul  class="navbar-nav me-auto mb-2 mb-lg-0"  *ngIf="user$ | async as user; else login">
+          <li class="nav-item">
+            <button
+              class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
+              [routerLink]="['admin']" *ngIf='user.email == "admin@gmail.com"'>Administrador</button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
+              *ngIf="user" (click)="onLogout()">Salir</button>
+          </li>
+
+          <li class="nav-item">
+            <button class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">{{user?.email}}{{user?.phoneNumber}}</button>
+          </li>
+        </ul>
+
+     
+        <ng-template #login>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <button
+                class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
+                routerLink="/login">Iniciar Sesion</button>
+            </li>
+
+            <li class="nav-item">
+              <button
+                class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
+                routerLink="/register">Registrarse</button>
+            </li>
+          </ul>
+
+        </ng-template>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <!--<a class="nav-link" [routerLink]="['ayuda']">FAQ</a>-->
+        <button
+          class="nav-link button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted"
+          [routerLink]="['ayuda']">FAQ</button>
+      </li>
+      </ul>
+      <form class="d-flex ">
+        <button type="button" (click)="habla()" class="btn btn-primary"><i class="fas fa-volume-up"></i></button>
+        <button type="button" (click)="silencio()" class="btn btn-danger"><i class="fas fa-volume-mute"></i></button>
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>

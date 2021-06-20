@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+               
+                <h1 class="text-center">Iniciar Sesion Con Telefono</h1>
+               
+                    <div class="form-group mt-2">
+                        <label for="text">Telefono</label>
+                        <input type="text" class="form-control" >
+                    </div>
+                    <br>
+
+                    <div id="recaptcha-container"></div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block mt-5" (click)="sendLoginCode()">Enviar Codigo</button>
+
+                    <div class="form-group">
+                        <label for="otp">Confirmar Codigo</label>
+                        <input name="otp" [(ngModel)]="otp" type="text" class="form-control"  >
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block mt-5" (click)="verifyLoginCode()">Iniciar Sesion</button>
+            
+            </div>
+        </div>
+    </div>
+</div>
+

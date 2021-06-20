@@ -1,4 +1,8 @@
-const express = require('express');
+const express = require("express");
+const nodemailer = require("nodemailer");
+const multiparty = require("multiparty");
+require("dotenv").config();
+
 const app = express(),
       bodyParser = require("body-parser");
       port = 3080;

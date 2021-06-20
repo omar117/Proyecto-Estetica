@@ -18,6 +18,7 @@ const ctrlDatos = {
         const { uid ,token} = req.params;
         const data = await modelDatos.getRecuperarDatosFireBase(uid,token);
         res.json(data.data); //la respuesta del servidor se genera aqui
+
     },
     RecuperarProductosFireBase: async (req, res) => {
         const {} = req.params;
